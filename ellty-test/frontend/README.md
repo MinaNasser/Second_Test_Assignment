@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[task2 ](https://ellty.notion.site/Second-Test-Assignment-bddc7150b86a47ee9e151e6145e95110)
 
 ## Available Scripts
 
