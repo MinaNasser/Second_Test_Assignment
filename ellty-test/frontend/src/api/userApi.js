@@ -1,54 +1,50 @@
-const BASE_URL = "http://localhost:5000/api";
+const API_URL = "http://localhost:5000/api/users";
 
 export const getUsers = async () => {
-  const res = await fetch(`${BASE_URL}/users`);
-  if (!res.ok) throw new Error("Failed to fetch users");
-  return res.json();
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error(`API Response status: ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.error("Error in getUsers:", err);
+    return [];
+  }
 };
 
 export const createUser = async (user) => {
-  const res = await fetch(`${BASE_URL}/users`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(user),
-  });
-  return res.json();
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    });
+    if (!res.ok)
+      throw new Error(`Failed to create user, status: ${res.status}`);
+  } catch (err) {
+    console.error("Error in createUser:", err);
+  }
 };
 
-export const updateUser = async (id, user) => {
-  const res = await fetch(`${BASE_URL}/users/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(user),
-  });
-  return res.json();
+export const updateUser = async (id, data) => {
+  try {
+    const res = await fetch(`${API_URL}/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok)
+      throw new Error(`Failed to update user, status: ${res.status}`);
+  } catch (err) {
+    console.error("Error in updateUser:", err);
+  }
 };
 
 export const deleteUser = async (id) => {
-  const res = await fetch(`${BASE_URL}/users/${id}`, { method: "DELETE" });
-  return res.ok;
-};
-
-// Posts
-export const createPost = async (post) => {
-  const res = await fetch(`${BASE_URL}/posts`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(post),
-  });
-  return res.json();
-};
-
-export const updatePost = async (id, post) => {
-  const res = await fetch(`${BASE_URL}/posts/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(post),
-  });
-  return res.json();
-};
-
-export const deletePost = async (id) => {
-  const res = await fetch(`${BASE_URL}/posts/${id}`, { method: "DELETE" });
-  return res.ok;
+  try {
+    const res = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+    if (!res.ok)
+      throw new Error(`Failed to delete user, status: ${res.status}`);
+  } catch (err) {
+    console.error("Error in deleteUser:", err);
+  }
 };

@@ -9,7 +9,8 @@ dotenv.config({ path: path.resolve("./prisma/.env") });
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({ origin: "http://localhost:3000", credentials: true })); // يسمح للـ frontend على بورت 3000
 app.use(express.json());
 
 // Routes

@@ -1,0 +1,115 @@
+/* General layout */
+.app-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-title {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Card titles */
+.card-title {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+/* Form fields */
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.input-field {
+  padding: 8px 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+  background-color: var(--input-bg);
+  flex: 1;
+  min-width: 120px;
+}
+
+/* Buttons */
+.btn {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.edit-btn {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.delete-btn {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+/* Lists */
+.user-list,
+.post-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.user-item,
+.post-item {
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-item:last-child,
+.post-item:last-child {
+  border-bottom: none;
+}
+
+/* Post form */
+.post-form input {
+  margin-right: 10px;
+  width: 120px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .post-form input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

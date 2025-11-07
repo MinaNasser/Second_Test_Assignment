@@ -1,62 +1,153 @@
+/* ---------- General Styles ---------- */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f6f8;
   margin: 0;
   padding: 0;
-}
-
-h1,
-h2,
-h4 {
   color: #333;
 }
 
-div {
-  margin: 10px;
+.app-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
 }
 
-.container {
-  width: 90%;
-  max-width: 1000px;
-  margin: auto;
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1a73e8;
+}
+
+/* ---------- Cards ---------- */
+.card {
   background-color: #fff;
-  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="number"] {
-  padding: 8px;
-  margin: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+/* ---------- User List ---------- */
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-button {
-  padding: 8px 12px;
-  margin: 5px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  transition: background-color 0.3s;
+.user-item {
+  padding: 15px;
 }
 
-button:hover {
-  background-color: #0056b3;
+.user-info {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
-ul {
-  list-style-type: none;
+.user-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* ---------- Posts ---------- */
+.post-section {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.post-section h4 {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.post-list {
+  list-style: none;
   padding-left: 0;
+  margin-top: 10px;
 }
 
-li {
-  background-color: #f9f9f9;
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 5px;
+.post-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+/* ---------- Form Inputs ---------- */
+.input-field {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.input-field:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 4px rgba(26, 115, 232, 0.3);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.primary-btn {
+  background-color: #1a73e8;
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background-color: #155ab6;
+}
+
+.edit-btn {
+  background-color: #fbbc04;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #c79100;
+}
+
+.delete-btn {
+  background-color: #ea4335;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #b82b1d;
+}
+
+/* ---------- Add User Card ---------- */
+.add-user-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .add-user-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .user-actions {
+    flex-direction: column;
+    gap: 5px;
+  }
 }

@@ -1,32 +1,21 @@
-// src/api/postApi.js
-const API_URL = "http://localhost:5000/api"; // غيّر البورت لو مختلف
-
-export const getPosts = async (userId) => {
-  const res = await fetch(`${API_URL}/users/${userId}/posts`);
-  return res.json();
-};
+const API_URL = "http://localhost:5000/api/posts";
 
 export const createPost = async (userId, post) => {
-  const res = await fetch(`${API_URL}/users/${userId}/posts`, {
+  await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(post),
+    body: JSON.stringify({ userId, ...post }),
   });
-  return res.json();
 };
 
-export const updatePost = async (postId, post) => {
-  const res = await fetch(`${API_URL}/posts/${postId}`, {
+export const updatePost = async (id, data) => {
+  await fetch(`${API_URL}/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(post),
+    body: JSON.stringify(data),
   });
-  return res.json();
 };
 
-export const deletePost = async (postId) => {
-  const res = await fetch(`${API_URL}/posts/${postId}`, {
-    method: "DELETE",
-  });
-  return res.json();
+export const deletePost = async (id) => {
+  await fetch(`${API_URL}/${id}`, { method: "DELETE" });
 };

@@ -1,14 +1,15 @@
 import React from "react";
-import UserList from "./components/UserList";
+import UsersPage from "./pages/UsersPage";
 import "./App.css";
+import "./styles/colors.css";
+import "./styles/components.css";
 
-function App() {
+const App = () => {
   return (
-    <div className="container">
-      <h1>Admin Dashboard</h1>
-      <UserList />
+    <div className="app-container">
+      <UsersPage />
     </div>
   );
-}
+};
 
 export default App;
